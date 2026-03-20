@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación: El Impacto de la IA en Comodoro Rivadavia</title>
+    <style>
+        :root {
+            --primary-color: #0f172a;
+            --secondary-color: #38bdf8;
+            --text-color: #f8fafc;
+            --bg-color: #020617;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow: hidden;
+        }
+
+        #presentation-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide {
+            position: absolute;
+            width: 85%;
+            max-width: 1100px;
+            height: auto;
+            min-height: 500px;
+            background-color: var(--primary-color);
+            padding: 3rem 4rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: scale(1);
+            visibility: visible;
+        }
+
+        .slide-number {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 1rem;
+            color: #64748b;
+        }
+
+        h1, h2 {
+            color: var(--secondary-color);
+            margin-top: 0;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 3rem; margin-bottom: 0.5rem; text-align: center; }
+        h2 { font-size: 2.2rem; margin-bottom: 2rem; border-bottom: 2px solid #1e293b; padding-bottom: 10px;}
+
+        /* Layout a dos columnas para contenido e imagen */
+        .slide-content {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .slide-text {
+            flex: 1;
+        }
+
+        .slide-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slide-image img {
+            max-width: 100%;
+            max-height: 350px;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            object-fit: cover;
+        }
+
+        ul {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+
+        li { margin-bottom: 20px; }
+
+        .controls {
+            position: absolute;
+            bottom: 30px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            z-index: 100;
+        }
+
+        button {
+            background-color: #1e293b;
+            color: white;
+            border: 1px solid #334155;
+            padding: 10px 25px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        button:hover {
+            background-color: var(--secondary-color);
+            color: var(--bg-color);
+            border-color: var(--secondary-color);
+        }
+
+        button:disabled {
+            background-color: #0f172a;
+            color: #475569;
+            cursor: not-allowed;
+            border-color: #0f172a;
+        }
+
+        .title-slide { text-align: center; justify-content: center; }
+        .title-slide h2 { border: none; font-size: 1.8rem; color: #94a3b8; margin-bottom: 0;}
+    </style>
+</head>
+<body>
+
+    <div id="presentation-container">
+
+        <div class="slide active title-slide" id="slide-0">
+            <h1>El Impacto de la IA</h1>
+            <h2>De San Luis a Comodoro Rivadavia</h2>
+            <p style="margin-top: 3rem; font-size: 1.2rem; color: #64748b;">Use las flechas del teclado para navegar</p>
+        </div>
+
+        <div class="slide" id="slide-1">
+            <span class="slide-number">1 / 8</span>
+            <h2>El costo de lo impredecible</h2>
+            <div class="slide-content">
+                <div class="slide-text">
+                    <ul>
+                        <li><strong>El desafío:</strong> Heladas localizadas.</li>
+                        <li><strong>El impacto:</strong> Daños irreversibles a las cosechas.</li>
+                        <li><strong>El problema técnico:</strong> Puntos ciegos y microclimas rurales lejos de las estaciones.</li>
+                    </ul>
+                </div>
+                <div class="slide-image">
+                    <img src="./campo_con_helada.png" alt="Campo con helada">
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" id="slide-2">
+            <span class="slide-number">2 / 8</span>
+            <h2>Talento local, impacto nacional</h2>
+            <div class="slide-content">
+                <div class="slide-text">
+                    <ul>
+                        <li><strong>Alianza Estratégica:</strong> UNPSJB + Universidad Nacional de los Comechingones.</li>
+                        <li><strong>Origen:</strong> Comodoro Rivadavia, 1990.</li>
+                    </ul>
+                </div>
+                <div class="slide-image">
+                    <img src="./logos_unis.png" alt="Logos Universidades">
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" id="slide-3">
+            <span class="slide-number">3 / 8</span>
+            <h2>El motor de la predicción</h2>
+            <div class="slide-content">
+                <div class="slide-text">
+                    <ul>
+                        <li><strong>Materia prima:</strong> 20 años de datos meteorológicos (muestreo cada 5 minutos).</li>
+                        <li><strong>Tecnología:</strong> Entrenamiento de 4 arquitecturas de Redes Neuronales.</li>
+                        <li><strong>Estado actual:</strong> Prueba de factibilidad superada.</li>
+                    </ul>
+                </div>
+                <div class="slide-image">
+                    <img src="./motor_de_prediccion.png" alt="Esquema IA">
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" id="slide-4">
+            <span class="slide-number">4 / 8</span>
+            <h2>El Desierto de Datos</h2>
+            <div class="slide-content">
+                <div class="slide-text">
+                    <ul>
+                        <li><strong>San Luis:</strong> 20 años de datos cada 5 minutos.</li>
+                        <li><strong>Comodoro Rivadavia:</strong> Ausencia de datasets públicos / Información fragmentada.</li>
+                    </ul>
+                </div>
+                <div class="slide-image">
+                    <img src="./desierto_de_datos.png" alt="Desierto de Datos">
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" id="slide-5">
+            <span class="slide-number">5 / 8</span>
+            <h2>El costo de no medir</h2>
+            <div class="slide-content">
+                <div class="slide-text">
+                    <ul>
+                        <li>Crisis aguda de actividad económica.</li>
+                        <li>Falta de inversiones.</li>
+                        <li><strong style="color: #ef4444;">Incertidumbre = Freno al desarrollo.</strong></li>
+                    </ul>
+                </div>
+                <div class="slide-image">
+                    <img src="./costo_de_no_medir.png" alt="Crisis">
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" id="slide-6">
+            <span class="slide-number">6 / 8</span>
+            <h2>Infraestructura inteligente</h2>
+            <div class="slide-content">
+                <div class="slide-text">
+                    <ul>
+                        <li><strong>Clima:</strong> Red meteorológica urbana.</li>
+                        <li><strong>Tránsito:</strong> Sensorización (semáforos inteligentes).</li>
+                        <li><strong>Información:</strong> Minería de noticias para detectar tendencias.</li>
+                    </ul>
+                </div>
+                <div class="slide-image">
+                    <img src="./motor_de_prediccion.png" alt="Smart City">
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" id="slide-7">
+            <span class="slide-number">7 / 8</span>
+            <h2>Universidad y Sector Privado</h2>
+            <div class="slide-content">
+                <div class="slide-text">
+                    <ul>
+                        <li><strong>La Universidad:</strong> Modelos, software y capacidad analítica. Lago de Datos del Observatorio de Economía, FCE.</li>
+                        <li><strong>Sector Privado:</strong> Generación de datos e inversión.</li>
+                        <li><strong>Meta:</strong> Un Observatorio Económico en tiempo real.</li>
+                    </ul>
+                </div>
+                <div class="slide-image">
+                    <img src="https://placehold.co/600x400/1e293b/38bdf8?text=Alianza+Estrategica" alt="Alianza">
+                </div>
+            </div>
+        </div>
+
+        <div class="slide title-slide" id="slide-8">
+            <span class="slide-number">8 / 8</span>
+            <h1 style="font-size: 3.5rem; line-height: 1.3;">"El talento y la tecnología ya están aquí.<br><span style="color: #f8fafc;">Construyamos los datos.</span>"</h1>
+        </div>
+
+    </div>
+
+    <div class="controls">
+        <button id="prevBtn" disabled>&#8592; Anterior</button>
+        <button id="nextBtn">Siguiente &#8594;</button>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let currentSlide = 0;
+
+        function updateSlides() {
+            slides.forEach((slide, index) => {
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === slides.length - 1;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                updateSlides();
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlides();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowRight' || event.key === 'Space') {
+                if (currentSlide < slides.length - 1) {
+                    currentSlide++;
+                    updateSlides();
+                }
+            } else if (event.key === 'ArrowLeft') {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    updateSlides();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
